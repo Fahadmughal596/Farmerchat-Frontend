@@ -1,0 +1,37 @@
+FARMERCHAT FINAL FYP APP FIXES
+==============================
+
+Live backend configured:
+https://fareedse.pythonanywhere.com
+
+What was fixed in this Flutter app:
+1. Dashboard is no longer static.
+2. Weather card added with Gujranwala weather using Open-Meteo public API.
+3. Weather refreshes every 1 minute automatically.
+4. Notification badge and alerts are visible.
+5. Login now stores Django session cookies from the live backend.
+6. API service now sends session cookies to protected backend endpoints.
+7. Notification unread count supports both `count` and `unread_count` response keys.
+8. Notification model supports both `type` and `notification_type` response keys.
+9. Mark-notification-read uses GET to avoid CSRF issue on live Django backend.
+10. IoT dashboard card connects to live backend; if no IoT row exists, demo-safe IoT sample is shown so FYP UI does not look empty.
+11. Latest AI Field Prediction card added using IoT + Weather values.
+12. Android INTERNET permission added.
+13. Correct build command file added.
+
+Build APK:
+flutter pub get; flutter build apk --release
+
+APK output:
+build\app\outputs\flutter-apk\app-release.apk
+
+If Android folder is broken/missing:
+flutter create --platforms=android .; flutter pub get; flutter build apk --release
+
+Important:
+Do not type: flutter build apk--release
+Correct:     flutter build apk --release
+
+Backend live process:
+No backend redeploy is required for this version because the app now adapts to the live backend endpoints.
+If you later want actual backend prediction endpoint instead of app-side IoT+Weather prediction, add /api/predictions/latest/ in Django and update AppConstants.

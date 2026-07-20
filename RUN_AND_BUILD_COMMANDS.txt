@@ -1,0 +1,11 @@
+OPEN POWERSHELL IN THIS FOLDER, THEN RUN:
+
+flutter pub get; flutter build apk --release
+
+APK LOCATION:
+build\app\outputs\flutter-apk\app-release.apk
+
+IF ANDROID FOLDER IS MISSING, RUN:
+flutter create --platforms=android .; flutter pub get; flutter build apk --release
+
+DO NOT type apk--release. Correct command is: flutter build apk --release
